@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ingegneria e Architettura - Mirko Corona</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ecf0f1;
+        }
+
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            background-color: #2c3e50;
+            border-radius: 4px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: #fff;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Stili per la sezione Progetti */
+        #progetti {
+            background-color: #fff;
+        }
+
+        .progetto {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+
+        .progetto:last-child {
+            border-bottom: none;
+        }
+
+        .progetto h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .progetto-descrizione {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .foto-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .foto-wrapper {
+            text-align: center;
+            flex: 0 1 350px;
+        }
+
+        .foto-wrapper img {
+            max-width: 350px;
+            max-height: 250px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .foto-wrapper figcaption {
+            margin-top: 0.75rem;
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .foto-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .foto-wrapper {
+                flex: 0 1 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Studio Ingegneria e Architettura</h1>
+        <p>Mirko Corona</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+    <div class="container">
+        <section id="progetti">
+            <h2>I Nostri Progetti</h2>
+
+            <div class="progetto">
+                <h3>Ristrutturazione Villa Residenziale</h3>
+                <p class="progetto-descrizione">
+                    Completa ristrutturazione di una villa residenziale con ampliamento e riqualificazione energetica. 
+                    Il progetto ha incluso il rifacimento completo degli interni, l'installazione di nuovi impianti 
+                    e l'ottimizzazione degli spazi abitativi.
+                </p>
+                <div class="foto-container">
+                    <figure class="foto-wrapper">
+                        <img src="images/villa-prima.jpg" alt="Villa prima della ristrutturazione">
+                        <figcaption>Prima</figcaption>
+                    </figure>
+                    <figure class="foto-wrapper">
+                        <img src="images/villa-dopo.jpg" alt="Villa dopo la ristrutturazione">
+                        <figcaption>Dopo</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="progetto">
+                <h3>Edificio Commerciale Centro Città</h3>
+                <p class="progetto-descrizione">
+                    Progettazione e realizzazione di un moderno edificio commerciale nel centro storico, 
+                    con particolare attenzione all'integrazione architettonica con il contesto urbano esistente 
+                    e all'efficienza energetica.
+                </p>
+                <div class="foto-container">
+                    <figure class="foto-wrapper">
+                        <img src="images/commerciale-prima.jpg" alt="Area prima della costruzione">
+                        <figcaption>Prima</figcaption>
+                    </figure>
+                    <figure class="foto-wrapper">
+                        <img src="images/commerciale-dopo.jpg" alt="Edificio commerciale completato">
+                        <figcaption>Dopo</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="progetto">
+                <h3>Recupero Palazzo Storico</h3>
+                <p class="progetto-descrizione">
+                    Intervento di restauro conservativo e consolidamento strutturale di un palazzo storico del XVIII secolo. 
+                    Il progetto ha preservato gli elementi architettonici originali integrando tecnologie moderne 
+                    per il comfort abitativo.
+                </p>
+                <div class="foto-container">
+                    <figure class="foto-wrapper">
+                        <img src="images/palazzo-prima.jpg" alt="Palazzo storico prima del restauro">
+                        <figcaption>Prima</figcaption>
+                    </figure>
+                    <figure class="foto-wrapper">
+                        <img src="images/palazzo-dopo.jpg" alt="Palazzo storico dopo il restauro">
+                        <figcaption>Dopo</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="progetto">
+                <h3>Complesso Residenziale Sostenibile</h3>
+                <p class="progetto-descrizione">
+                    Progettazione di un complesso residenziale eco-sostenibile con appartamenti ad alta efficienza energetica, 
+                    spazi verdi comuni e sistemi di raccolta delle acque piovane. Un esempio di architettura moderna 
+                    attenta all'ambiente.
+                </p>
+                <div class="foto-container">
+                    <figure class="foto-wrapper">
+                        <img src="images/residenziale-prima.jpg" alt="Area prima della costruzione del complesso">
+                        <figcaption>Prima</figcaption>
+                    </figure>
+                    <figure class="foto-wrapper">
+                        <img src="images/residenziale-dopo.jpg" alt="Complesso residenziale completato">
+                        <figcaption>Dopo</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="servizi">
+            <h2>I Nostri Servizi</h2>
+            <p>
+                Lo studio offre una vasta gamma di servizi professionali nel campo dell'ingegneria e dell'architettura, 
+                includendo progettazione architettonica, calcoli strutturali, direzione lavori, pratiche edilizie, 
+                certificazioni energetiche e consulenza tecnica.
+            </p>
+        </section>
+
+        <section id="contatti">
+            <h2>Contatti</h2>
+            <p>
+                Per informazioni e preventivi gratuiti, contattateci ai seguenti recapiti:<br>
+                Email: info@studiocorona.it<br>
+                Telefono: +39 XXX XXX XXXX
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Studio Ingegneria e Architettura - Mirko Corona. Tutti i diritti riservati.</p>
+    </footer>
+</body>
+</html>
