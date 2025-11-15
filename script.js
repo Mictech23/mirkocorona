@@ -79,7 +79,7 @@ sliders.forEach(slider => {
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     // Get form data
@@ -91,41 +91,50 @@ contactForm.addEventListener('submit', (e) => {
         message: document.getElementById('message').value
     };
     
-    // Simulate form submission (in production, this would send to a server)
-    console.log('Form submitted:', formData);
+    // Disable submit button during submission
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const originalButtonText = submitButton.textContent;
+    submitButton.disabled = true;
+    submitButton.textContent = 'Invio in corso...';
     
-    // Show success message
-    formMessage.className = 'form-message success';
-    formMessage.textContent = 'Grazie per averci contattato! Ti risponderemo al più presto.';
-    
-    // Reset form
-    contactForm.reset();
-    
-    // Hide message after 5 seconds
-    setTimeout(() => {
-        formMessage.style.display = 'none';
-    }, 5000);
-    
-    // In production, you would do something like:
-    /*
-    fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-    })
-    .then(response => response.json())
-    .then(data => {
-        formMessage.className = 'form-message success';
-        formMessage.textContent = 'Grazie per averci contattato! Ti risponderemo al più presto.';
-        contactForm.reset();
-    })
-    .catch(error => {
+    try {
+        // Send form data to PHP backend
+        const response = await fetch('send-email.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            // Show success message
+            formMessage.className = 'form-message success';
+            formMessage.textContent = result.message;
+            
+            // Reset form
+            contactForm.reset();
+        } else {
+            // Show error message
+            formMessage.className = 'form-message error';
+            formMessage.textContent = result.message;
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
         formMessage.className = 'form-message error';
-        formMessage.textContent = 'Si è verificato un errore. Riprova più tardi.';
-    });
-    */
+        formMessage.textContent = 'Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi o contattaci direttamente all\'indirizzo mirkocorona@libero.it';
+    } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+        
+        // Hide message after 8 seconds
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 8000);
+    }
 });
 
 // ===========================
