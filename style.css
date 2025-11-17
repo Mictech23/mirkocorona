@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fafbfc;
+  color: #222;
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.site-header {
+  background: #264653;
+  color: #fff;
+  padding: 2vh 0;
+}
+.site-header .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header h1 {
+  font-size: 2.25rem;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1.5vw;
+  list-style: none;
+}
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.nav-list a:hover {
+  background: #2a9d8f;
+}
+
+.site-main {
+  padding: 4vh 0 2vh 0;
+}
+
+.hero {
+  text-align: center;
+  padding: 3vh 2vw;
+  background: #e9ecef;
+  border-radius: 12px;
+  margin-bottom: 4vh;
+}
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1vh;
+}
+.hero p {
+  font-size: 1.19rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2vw;
+  margin-bottom: 3vh;
+}
+.service-card {
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2vh 2vw;
+  box-shadow: 0 0 8px rgba(0,0,0,0.04);
+}
+.service-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1vh;
+  color: #264653;
+}
+
+.site-footer {
+  background: #264653;
+  color: #fff;
+  text-align: center;
+  padding: 1.5vh 0;
+  font-size: 1rem;
+  margin-top: 4vh;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  .site-header .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1vh;
+  }
+  .site-header h1 {
+    font-size: 1.6rem;
+    margin-bottom: .75rem;
+    margin-right: 0;
+  }
+  .nav-list {
+    gap: .8vw;
+    font-size: 1rem;
+  }
+  .nav-list li {
+    margin-bottom: 3px;
+  }
+
+  .hero {
+    padding: 2vh 2vw;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 2vh;
+  }
+  .service-card {
+    padding: 2vh 4vw;
+    font-size: 1rem;
+  }
+  .container {
+    width: 97%;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    width: 99%;
+    padding: 0;
+  }
+  .site-header h1, .hero h2 {
+    font-size: 1.08rem;
+  }
+  .service-card {
+    padding: 2vh 3vw;
+  }
+}
