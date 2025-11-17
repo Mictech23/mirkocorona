@@ -1,448 +1,53 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <title>Studio di Ingegneria e Architettura - Mirko Corona</title>
-    <meta name="description" content="Studio professionale di ingegneria e architettura specializzato in progettazione, ristrutturazione e consulenza tecnica.">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Lightbox styles */
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            left: 0; top: 0;
-            width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox-img {
-            max-width: 90vw;
-            max-height: 80vh;
-            border-radius: 8px;
-            box-shadow: 0 0 32px #0008;
-        }
-        .lightbox-overlay.active { display: flex;}
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            font-size: 2.5rem;
-            color: #fff;
-            cursor: pointer;
-            z-index: 10001;
-            background: none;
-            border: none;
-        }
-        .project-images img {
-            cursor: pointer;
-            transition: box-shadow 0.2s;
-            margin: 0.5rem;
-            max-width: 220px;
-            max-height: 160px;
-            border-radius: 6px;
-            box-shadow: 0 2px 8px #0003;
-        }
-        .project-images img:hover { box-shadow: 0 4px 16px #0006; }
-        .project-images {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ingegneria e Architettura</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-                    <h2>Mirko Corona</h2>
-                    <span>Ingegneria & Architettura</span>
-                </div>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#servizi">Servizi</a></li>
-                    <li><a href="#progetti">Progetti</a></li>
-                    <li><a href="#contatti">Contatti</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1 class="hero-title">Studio di Ingegneria e Architettura</h1>
-            <p class="hero-subtitle">Eccellenza Progettuale dal Concept alla Realizzazione</p>
-            <div class="hero-buttons">
-                <a href="#progetti" class="btn btn-primary">Scopri i Progetti</a>
-                <a href="#contatti" class="btn btn-secondary">Contattaci</a>
-            </div>
-            <div class="studio-description" style="margin-top:2rem;">
-                <p>
-                    Il nostro studio unisce competenze ingegneristiche e sensibilità architettonica per creare spazi funzionali, sostenibili ed esteticamente raffinati. Ogni progetto è un percorso condiviso con il cliente, dalla fase preliminare fino alla realizzazione finale.
-                </p>
-                <p>
-                    Dalla ristrutturazione residenziale alla riqualificazione energetica, dalla progettazione illuminotecnica al design di interni, offriamo un servizio completo che integra tutti gli aspetti progettuali e costruttivi.
-                </p>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
-
-    <!-- Servizi -->
-    <section id="servizi" class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">I Nostri Servizi</span>
-                <h2>Cosa Offriamo</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Ristrutturazioni complete di abitazioni private</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Riqualificazione energetica con incentivi fiscali</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Progettazione illuminotecnica e studio atmosfere</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Design di interni e soluzioni d'arredo su misura</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Rifacimento facciate condominiali</h3>
-                </div>
-                <div class="service-card">
-                    <h3>Progettazione strutture ricettive</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ristrutturazioni Residenziali -->
-    <section id="ristrutturazioni-residenziali" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Ristrutturazioni Residenziali</span>
-                <h2>Funzionalità, Comfort e Bellezza</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Trasformiamo abitazioni esistenti in spazi contemporanei che coniugano funzionalità, comfort e bellezza. Ogni intervento è studiato nei minimi dettagli, dalla ridistribuzione degli spazi alla scelta dei materiali e delle finiture.
-                    </p>
-                    <ul>
-                        <li><strong>Ridistribuzione Spazi:</strong> Ottimizziamo la funzionalità attraverso un'attenta analisi distributiva</li>
-                        <li><strong>Studio Illuminotecnico:</strong> Atmosfere coinvolgenti che valorizzano ogni ambiente</li>
-                        <li><strong>Design Integrato:</strong> Arredi su misura in perfetta armonia con l'architettura</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="chi-siamo" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Chi Siamo</span>
-                <h2>Esperienza e Professionalità</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Benvenuti nello Studio di Ingegneria e Architettura Mirko Corona, dove l'innovazione incontra la tradizione per creare spazi unici e funzionali.</p>
-                    <p>Con anni di esperienza nel settore, offriamo soluzioni personalizzate che trasformano le vostre idee in realtà concrete, con attenzione ai dettagli e rispetto per l'ambiente.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>15+</h3>
-                            <p>Anni di Esperienza</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>40+</h3>
-                            <p>Progetti Completati</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>100%</h3>
-                            <p>Clienti Soddisfatti</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="progetti" class="projects-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Portfolio</span>
-                <h2>Scopri i Nostri Progetti</h2>
-                <p>Trasformazioni che fanno la differenza</p>
-            </div>
-            <div class="projects-list">
-
-                <!-- Appartamento Via Cocco Ortu, Cagliari -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Appartamento Via Cocco Ortu, Cagliari</h3>
-                        <span class="project-tag">Residenziale</span>
-                    </div>
-                    <div class="project-details">
-                        <p>Progetto completato: 2017</p>
-                        <p>Questo progetto ha comportato una ristrutturazione integrale degli spazi, includendo il rifacimento di tutti degli impianti e l'adozione di finiture contemporanee di alta qualità.</p>
-                        <p><strong>Prima e Dopo: La Trasformazione</strong></p>
-                        <div class="project-images">
-                            <img src="images/via cocco ortu prima.jpg" alt="Prima - Via Cocco Ortu" class="gallery-img" />
-                            <img src="images/via cocco ortu dopo.jpg" alt="Dopo - Via Cocco Ortu" class="gallery-img" />
-                            <img src="images/cocco-ortu.jpg" alt="Appartamento Via Cocco Ortu, Cagliari" class="gallery-img" />
-                            <img src="images/coccoortucontrapposizione.jpg" alt="Appartamento Via Cocco Ortu, Cagliari" class="gallery-img" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Villetta Via Montegrappa, Selargius -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Villetta Via Montegrappa, Selargius</h3>
-                        <span class="project-tag">Residenziale</span>
-                    </div>
-                    <div class="project-details">
-                        <p>Progetto completato: 2018</p>
-                        <p>Recupero edilizio con riqualificazione delle facciate e miglioramento dell'efficienza energetica, mantenendo l'identità architettonica originaria della villetta. Lo studio illuminotecnico e l'arredo su misura valorizzano le atmosfere e la vivibilità degli spazi.</p>
-                        <p>Progettazione di controsoffitti e luce integrata per enfatizzare la continuità tra architettura, arredo e scenografia luminosa degli spazi. L'intervento ha permesso di ottenere ambienti moderni e accoglienti.</p>
-                        <p><strong>Riqualificazione Facciate:</strong> Interventi conservativi con tecniche moderne.</p>
-                    </div>
-                </div>
-
-                <!-- Cubo Camino – Villa Elmas -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Cubo Camino – Villa Elmas</h3>
-                        <span class="project-tag">Residenziale</span>
-                    </div>
-                    <div class="project-details">
-                        <p>Progetto completato: 2019</p>
-                        <p>Ristrutturazione di villa unifamiliare con ridisegno complessivo degli spazi interni ed esterni. Il giardino è stato concepito come un unicum con il soggiorno, un ambiente fluido che favorisce la continuità tra interno ed esterno.</p>
-                        <p>Tipica villetta unifamiliare risalente agli anni 2000. Gli spazi esterni erano frammentati, con un giardino tradizionale e una netta separazione fisica e visiva tra l'interno e l'esterno.</p>
-                        <p><strong>Progetto Completato:</strong> La ristrutturazione ha creato un ambiente fluido e continuo tra soggiorno e giardino. L'introduzione del "Cubo Camino", l'uso di vetrate e la progettazione degli arredi su misura hanno permesso di ottenere una nuova qualità abitativa.</p>
-                        <p><strong>Il progetto:</strong> Ogni dettaglio è curato per un'esperienza sensoriale completa: le pavimentazioni in basalto e biancone definiscono percorsi eleganti, mentre la luce naturale e artificiale valorizza gli spazi.</p>
-                        <p>Il progetto rappresenta un esempio di integrazione perfetta tra architettura, paesaggio e design, dove ogni elemento concorre a creare un'esperienza spaziale unica e memorabile.</p>
-                        <p>Grazie alla progettazione illuminotecnica meticolosa, al Cubo Camino, rivestito in cartongesso e granito Belvedere come la penisola e grazie agli elementi d'arredo, vengono enfatizzati gli ambienti e la vivibilità della villa.</p>
-                        <p><strong>Prima e Dopo: La Trasformazione</strong></p>
-                        <div class="project-images">
-                            <img src="images/cubo-camino.png" alt="Cubo Camino – Villa Elmas" class="gallery-img" />
-                            <img src="images/cubocamino dopo.jpg" alt="Dopo - Cubo Camino" class="gallery-img" />
-                            <img src="images/cubocamino2.jpg" alt="Cubo Camino - Vista 2" class="gallery-img" />
-                            <img src="images/cubocaminobagno.jpg" alt="Cubo Camino - Bagno" class="gallery-img" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ristrutturazione appartamento – Via Ausonia, Cagliari -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Ristrutturazione appartamento – Via Ausonia, Cagliari</h3>
-                        <span class="project-tag">Residenziale</span>
-                    </div>
-                    <div class="project-details">
-                        <p>Progetto completato: 2021-2022</p>
-                        <p>Ristrutturazione completa dell'appartamento con riqualificazione energetica dell'involucro e rifacimento di tutti gli impianti. Lo studio illuminotecnico valorizza ogni ambiente e crea atmosfere coinvolgenti.</p>
-                        <p>La progettazione degli arredi e dei controsoffitti con "gola luminosa" integrata enfatizza comfort, funzionalità e continuità visiva tra interno ed esterno.</p>
-                        <p><strong>Prima e Dopo: La Trasformazione</strong></p>
-                        <div class="project-images">
-                            <img src="images/ausonia-before.jpg" alt="Prima - Via Ausonia" class="gallery-img" />
-                            <img src="images/ausonia-after-1.jpg" alt="Dopo - Via Ausonia" class="gallery-img" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Condominio Via Lipari, Cagliari -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Condominio Via Lipari, Cagliari</h3>
-                        <span class="project-tag">Residenziale</span>
-                    </div>
-                    <div class="project-details">
-                        <p>Progetto completato: 2023</p>
-                        <p>Manutenzione straordinaria con rifacimento degli intonaci e tinteggiature, pulizia parti in pietra, rifacimento persiane, balconi e recinzione al piano terra incluse riparazioni strutturali.</p>
-                        <div class="project-images">
-                            <img src="images/via lipari.jpg" alt="Condominio Via Lipari, Cagliari" class="gallery-img" />
-                            <img src="images/via lipari2.jpg" alt="Condominio Via Lipari - Vista 2" class="gallery-img" />
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Villa Porto Frailis, Tortolì -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Villa Porto Frailis, Tortolì</h3>
-                        <span class="project-tag">Residenziale</span>
-                    </div>
-                    <div class="project-details">
-                        <p>Progetto 2022-2023 • Superbonus 110%</p>
-                        <p>Progetto Superbonus 110% con interventi su involucro edilizio, impianto di climatizzazione aria-acqua e installazione di impianto fotovoltaico integrato, per il totale efficientamento energetico della villa.</p>
-                        <div class="project-images">
-                            <img src="images/portofrailis1.jpg" alt="Villa Porto Frailis, Tortolì" class="gallery-img" />
-                            <img src="images/portofrailis2.jpg" alt="Villa Porto Frailis - Vista 2" class="gallery-img" />
-                            <img src="images/portofrailis3.jpg" alt="Villa Porto Frailis - Vista 3" class="gallery-img" />
-                            <img src="images/portofrailis4.jpeg" alt="Villa Porto Frailis - Vista 4" class="gallery-img" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lightbox HTML -->
-    <div id="lightboxOverlay" class="lightbox-overlay">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
-        <img id="lightboxImg" class="lightbox-img" src="" alt="project gallery" />
+  <header class="site-header">
+    <div class="container">
+      <h1>Studio Ingegneria e Architettura</h1>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Chi siamo</a></li>
+          <li><a href="#">Servizi</a></li>
+          <li><a href="#">Contatti</a></li>
+        </ul>
+      </nav>
     </div>
-
-    <!-- Contact Section -->
-    <section id="contatti" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Contattaci</span>
-                <h2>Inizia il Tuo Progetto</h2>
-                <p>Siamo qui per trasformare le tue idee in realtà</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Informazioni di Contatto</h3>
-                    <div class="contact-item">
-                        <h4>Studio di Ingegneria e Architettura</h4>
-                        <p>Via Michele Morelli 19<br>09134 Cagliari (CA)</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Telefono</h4>
-                        <p>+39 3200679874</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Email</h4>
-                        <p>mirkocorona@libero.it</p>
-                    </div>
-                    <div class="contact-item">
-                        <h4>Orari di Apertura</h4>
-                        <p>Lunedì - Venerdì: 9:00 - 18:00<br>Sabato: Su appuntamento</p>
-                    </div>
-                </div>
-                <div class="contact-form-wrapper">
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nome e Cognome *</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefono</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Servizio di Interesse</label>
-                            <select id="service" name="service">
-                                <option value="">Seleziona un servizio</option>
-                                <option value="progettazione">Progettazione Architettonica</option>
-                                <option value="ingegneria">Ingegneria Strutturale</option>
-                                <option value="ristrutturazione">Ristrutturazione</option>
-                                <option value="efficienza">Efficienza Energetica</option>
-                                <option value="consulenza">Consulenza Tecnica</option>
-                                <option value="interior">Interior Design</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Messaggio *</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Invia Messaggio</button>
-                    </form>
-                    <div id="formMessage" class="form-message"></div>
-                </div>
-            </div>
+  </header>
+  <main class="site-main">
+    <div class="container">
+      <section class="hero">
+        <h2>Benvenuti!</h2>
+        <p>
+          Offriamo servizi professionali di ingegneria e architettura per i tuoi progetti: efficienza, creatività e competenza in ogni dettaglio. Scopri di più su di noi!
+        </p>
+      </section>
+      <section class="services-grid">
+        <div class="service-card">
+          <h3>Progettazione</h3>
+          <p>Soluzioni su misura per abitazioni, uffici, infrastrutture e molto altro.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Mirko Corona</h3>
-                    <p>Studio di Ingegneria e Architettura</p>
-                    <p class="footer-tagline">Trasformiamo idee in realtà concrete</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Link Utili</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#servizi">Servizi</a></li>
-                        <li><a href="#progetti">Progetti</a></li>
-                        <li><a href="#contatti">Contatti</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Servizi</h4>
-                    <ul>
-                        <li>Progettazione Architettonica</li>
-                        <li>Ingegneria Strutturale</li>
-                        <li>Ristrutturazioni</li>
-                        <li>Consulenza Tecnica</li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contatti</h4>
-                    <ul>
-                        <li>Via Michele Morelli 19, 09134 Cagliari (CA)</li>
-                        <li>+39 3200679874</li>
-                        <li>mirkocorona@libero.it</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Studio di Ingegneria e Architettura Mirko Corona. Tutti i diritti riservati.</p>
-            </div>
+        <div class="service-card">
+          <h3>Consulenza</h3>
+          <p>Assistenza tecnica per pratiche edilizie, direzione lavori e sicurezza.</p>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <!-- Lightbox JS -->
-    <script>
-        // Lightbox for project gallery images
-        document.querySelectorAll('.gallery-img').forEach(function(img) {
-            img.addEventListener('click', function() {
-                document.getElementById('lightboxImg').src = this.src;
-                document.getElementById('lightboxOverlay').classList.add('active');
-            });
-        });
-        function closeLightbox() {
-            document.getElementById('lightboxOverlay').classList.remove('active');
-            document.getElementById('lightboxImg').src = '';
-        }
-        // Also close overlay on click outside image
-        document.getElementById('lightboxOverlay').addEventListener('click', function(e) {
-            if (e.target === this) closeLightbox();
-        });
-    </script>
+        <div class="service-card">
+          <h3>Restauro</h3>
+          <p>Recupero e valorizzazione di edifici storici e moderni.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Studio Ingegneria e Architettura. Tutti i diritti riservati.</p>
+    </div>
+  </footer>
 </body>
 </html>
